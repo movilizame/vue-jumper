@@ -1,3 +1,14 @@
 # Movilizame vue-jumper
 
-npm run build: build in dist folder.
+## Install
+
+```
+npm i @movilizame/vue-jumper --save
+```
+
+## Development
+
+```
+npm install
+npm run build
+```
