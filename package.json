@@ -1,6 +1,6 @@
 {
   "name": "@movilizame/vue-jumper",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Movilizame vue-jumper directive",
   "main": "jumper.js",
   "scripts": {
@@ -23,7 +23,14 @@
   },
   "homepage": "https://github.com/movilizame/vue-jumper#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.0",
     "gulp": "^3.9.1",
-    "gulp-uglify-es": "^1.0.1"
+    "gulp-babel": "^7.0.1",
+    "gulp-uglify-es": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }
