@@ -6,28 +6,29 @@
         return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
     }
 
-    let action = function (element) {
-        let target = jumpers[element.id].el;
-        let value = jumpers[element.id].value;
-        if (value && value !== '' && jumpers[value]) {
-            target = jumpers[value].el;
-        }
-        if (!jumpers[element.id].arrowFlag) {
-            if (jumpers[element.id].modifiers.blur) {
-                jumpers[element.id].el.blur();
-            }
-            if (isFunction(target[jumpers[element.id].arg])) {
-                target[jumpers[element.id].arg]();
+    let action = function (jumper) {
+        let target = jumper.el;
+        if (jumper.value && jumper.value !== '') {
+            if (jumpers[jumper.value]) {
+                target = jumpers[jumper.value].el;
             }
         }
-        if (jumpers[element.id].arrowFlag !== undefined) {
-            jumpers[element.id].arrowFlag = false;
+        if (!jumper.arrowFlag) {
+            if (jumper.modifiers.blur) {
+                jumper.el.blur();
+            }
+            if (isFunction(target[jumper.arg])) {
+                target[jumper.arg]();
+            }
+        }
+        if (jumper.arrowFlag !== undefined) {
+            jumper.arrowFlag = false;
         }
     }
 
-    let callAction = function (value) {
-        if (jumpers[value]) {
-            action(jumpers[value].el);
+    let callAction = function (elementName) {
+        if (jumpers[elementName]) {
+            action(jumpers[elementName]);
         } else {
             console.error('Vue-Jumper: The id provided as an argument does not correspond to any element.');
         }
@@ -35,7 +36,7 @@
     
     let keyHandler = function (event) {
         if ((event.type.toUpperCase() === 'KEYUP' && event.key.toUpperCase() === 'ENTER') || event.type.toUpperCase() === 'CLICK' || event.type.toUpperCase() === 'CHANGE') {
-            action(this);
+            action(jumpers[this.id]);
         }
     };
     
