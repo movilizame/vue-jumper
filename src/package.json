@@ -1,6 +1,6 @@
 {
   "name": "@movilizame/vue-jumper",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Movilizame vue-jumper directive",
   "main": "jumper.js",
   "scripts": {
