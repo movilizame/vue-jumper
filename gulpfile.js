@@ -10,7 +10,7 @@ const source = require('vinyl-source-stream');
 const browserify = require('browserify');
 */
 
-const files = ['README.md', 'package.json', 'LICENSE'];
+const files = ['README.md', 'package_publish.json', 'LICENSE'];
 
 gulp.task('build', ['uglify', 'copyFiles'], function() {
 });
