@@ -30,7 +30,7 @@
     }
     
     let keyHandler = function (event) {
-        if ((event.type.toUpperCase() === 'KEYUP' && event.key.toUpperCase() === 'ENTER') || event.type.toUpperCase() === 'CLICK' || event.type.toUpperCase() === 'CHANGE') {
+        if ((event.type.toUpperCase() === 'KEYDOWN' && event.key.toUpperCase() === 'ENTER') || event.type.toUpperCase() === 'CLICK' || event.type.toUpperCase() === 'CHANGE') {
             action(jumpers[this.id]);
         }
     };
