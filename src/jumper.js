@@ -41,7 +41,7 @@
     };
     
     let checkArrows = function (event) {
-        if (event.type.toUpperCase() === 'CLICK' || event.key.toUpperCase() === 'ARROWRIGHT' || event.key.toUpperCase() === 'ARROWLEFT' || event.key.toUpperCase() === 'ARROWUP' || event.key.toUpperCase() === 'ARROWDOWN') {
+        if (event.type.toUpperCase() === 'CLICK' || event.key.toUpperCase() === 'ARROWRIGHT' || event.key.toUpperCase() === 'ARROWLEFT' || event.key.toUpperCase() === 'ARROWUP' || event.key.toUpperCase() === 'ARROWDOWN' || event.key.toUpperCase() === 'ENTER') {
             jumpers[this.id].arrowFlag = true;
         }
     };
