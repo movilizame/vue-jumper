@@ -13,16 +13,11 @@
                 target = jumpers[jumper.value].el;
             }
         }
-        if (!jumper.arrowFlag) {
-            if (jumper.modifiers.blur) {
-                jumper.el.blur();
-            }
-            if (isFunction(target[jumper.arg])) {
-                target[jumper.arg]();
-            }
+        if (jumper.modifiers.blur) {
+            jumper.el.blur();
         }
-        if (jumper.arrowFlag !== undefined) {
-            jumper.arrowFlag = false;
+        if (isFunction(target[jumper.arg])) {
+            target[jumper.arg]();
         }
     }
 
@@ -40,13 +35,7 @@
         }
     };
     
-    let checkArrows = function (event) {
-        if (event.type.toUpperCase() === 'CLICK' || event.key.toUpperCase() === 'ARROWRIGHT' || event.key.toUpperCase() === 'ARROWLEFT' || event.key.toUpperCase() === 'ARROWUP' || event.key.toUpperCase() === 'ARROWDOWN' || event.key.toUpperCase() === 'ENTER') {
-            jumpers[this.id].arrowFlag = true;
-        }
-    };
-
-    let addElementToArray = function (el, binding, node) {
+     let addElementToArray = function (el, binding, node) {
         jumpers[el.id] = {};
         jumpers[el.id].name = el.id;
         jumpers[el.id].value = binding.value;
@@ -70,15 +59,9 @@
             }
         }
         if (!binding.modifiers.wait) {
-            el.addEventListener('keyup', keyHandler, false);
+            el.addEventListener('keydown', keyHandler, false);
             if (el.tagName.toUpperCase() === 'BUTTON') {
                 el.addEventListener('click', keyHandler, false);
-            }
-            if (el.tagName.toUpperCase() === 'SELECT') {
-                el.addEventListener('change', keyHandler, false);
-                el.addEventListener('keydown', checkArrows, false);
-                el.addEventListener('click', checkArrows, false);
-                jumpers[el.id].arrowFlag = false;
             }
         }
     }
