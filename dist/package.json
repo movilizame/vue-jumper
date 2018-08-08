@@ -1,0 +1,25 @@
+{
+  "name": "@movilizame/vue-jumper",
+  "version": "2.0.1",
+  "description": "Movilizame vue-jumper directive",
+  "main": "jumper.js",
+  "scripts": {
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/movilizame/vue-jumper.git"
+  },
+  "keywords": [
+    "vue",
+    "directive",
+    "vue-jumper",
+    "movilizame"
+  ],
+  "author": "Movilizame",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/movilizame/vue-jumper/issues"
+  },
+  "homepage": "https://github.com/movilizame/vue-jumper#readme"
+}
