@@ -185,7 +185,7 @@
             if (binding.value !== true) {
                 /* if (jumperList.list.length === 0 && el.focus) {
                     el.focus();
-                }*/
+                } */
                 new Jumper(el, binding, node, jumperList); // eslint-disable-line no-new
             }
         },
